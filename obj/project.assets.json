@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ДЗ по програмированию\\проекты\\Kansol\\Console\\Console.csproj",
+      "projectUniqueName": "D:\\ДЗ по програмированию\\Console\\TeamY\\Console.csproj",
       "projectName": "Console",
-      "projectPath": "D:\\ДЗ по програмированию\\проекты\\Kansol\\Console\\Console.csproj",
+      "projectPath": "D:\\ДЗ по програмированию\\Console\\TeamY\\Console.csproj",
       "packagesPath": "C:\\Users\\joker\\.nuget\\packages\\",
-      "outputPath": "D:\\ДЗ по програмированию\\проекты\\Kansol\\Console\\obj\\",
+      "outputPath": "D:\\ДЗ по програмированию\\Console\\TeamY\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
