@@ -1,29 +1,6 @@
 
-.vs/Console/DesignTimeBuild/.dtbcache.v2
-.vs/Console/v16/.suo
-.vs/Console/DesignTimeBuild/.dtbcache.v2
-.vs/Console/v16/.suo
+.vs/
 
-.idea/.idea.Console/.idea/.idea.Console.iml
+.idea/
 
-.idea/.idea.Console/.idea/.name
-
-.idea/.idea.Console/.idea/codestream.xml
-
-.idea/.idea.Console/.idea/contentModel.xml
-
-.idea/.idea.Console/.idea/indexLayout.xml
-
-.idea/.idea.Console/.idea/modules.xml
-
-.idea/.idea.Console/.idea/projectSettingsUpdater.xml
-
-.idea/.idea.Console/.idea/vcs.xml
-
-.idea/.idea.Console/.idea/workspace.xml
-
-.idea/.idea.Console/riderModule.iml
-
-obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs
-
-obj/project.packagespec.json
+obj/
