@@ -11,3 +11,14 @@ D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.
 D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.dll
 D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.pdb
 D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.genruntimeconfig.cache
+E:\GitHub2\TeamY\obj\Debug\netcoreapp3.1\Console.csprojAssemblyReference.cache
+E:\GitHub2\TeamY\obj\Debug\netcoreapp3.1\Console.AssemblyInfoInputs.cache
+E:\GitHub2\TeamY\obj\Debug\netcoreapp3.1\Console.AssemblyInfo.cs
+E:\GitHub2\TeamY\obj\Debug\netcoreapp3.1\Console.dll
+E:\GitHub2\TeamY\obj\Debug\netcoreapp3.1\Console.pdb
+E:\GitHub2\TeamY\bin\Debug\netcoreapp3.1\Console.exe
+E:\GitHub2\TeamY\bin\Debug\netcoreapp3.1\Console.deps.json
+E:\GitHub2\TeamY\bin\Debug\netcoreapp3.1\Console.runtimeconfig.json
+E:\GitHub2\TeamY\bin\Debug\netcoreapp3.1\Console.runtimeconfig.dev.json
+E:\GitHub2\TeamY\bin\Debug\netcoreapp3.1\Console.dll
+E:\GitHub2\TeamY\bin\Debug\netcoreapp3.1\Console.pdb

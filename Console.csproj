@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="D:\ДЗ по програмированию\Console\TeamY\Consol.cs" Link="Consol.cs" />
-    <Compile Include="D:\ДЗ по програмированию\Console\TeamY\Program.cs" Link="Program.cs" />
+    <Compile Include="E:\GitHub2\\TeamY\Consol.cs" Link="Consol.cs" />
+    <Compile Include="E:\GitHub2\\TeamY\Program.cs" Link="Program.cs" />
   </ItemGroup>
 
 </Project>
