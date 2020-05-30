@@ -1,0 +1,13 @@
+D:\ДЗ по програмированию\Console\TeamY\bin\Debug\netcoreapp3.1\Console.exe
+D:\ДЗ по програмированию\Console\TeamY\bin\Debug\netcoreapp3.1\Console.deps.json
+D:\ДЗ по програмированию\Console\TeamY\bin\Debug\netcoreapp3.1\Console.runtimeconfig.json
+D:\ДЗ по програмированию\Console\TeamY\bin\Debug\netcoreapp3.1\Console.runtimeconfig.dev.json
+D:\ДЗ по програмированию\Console\TeamY\bin\Debug\netcoreapp3.1\Console.dll
+D:\ДЗ по програмированию\Console\TeamY\bin\Debug\netcoreapp3.1\Console.pdb
+D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.csprojAssemblyReference.cache
+D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.csproj.CoreCompileInputs.cache
+D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.AssemblyInfoInputs.cache
+D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.AssemblyInfo.cs
+D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.dll
+D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.pdb
+D:\ДЗ по програмированию\Console\TeamY\obj\Debug\netcoreapp3.1\Console.genruntimeconfig.cache
