@@ -11,35 +11,31 @@ namespace Console
         static void Main()
         {
             string path, newpath, pathO, newPathDirectory, temp, subpath;
+            string slash;
+            List<string> steps = new List<string>();
            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            //string slash;
-            //List<string> steps = new List<string>();
-            ////Реализация перехода по каталогам
-            //slash = @"\";
-            //pathO = @"E:\";
-            //steps.Add(pathO);
-            //Consol.Show(pathO);
-            //WriteLine("Введите каталог в какой вы хотите перейти");
-            //newPathDirectory = ReadLine();
-            // = pathO + newPathDirectory + slash;
-            //steps.Add(pathO);
-            //Consol.Show(pathO);
-            /////////////////////////////////////////////////////
+            slash = @"\";
+            pathO = @"D:\";
+            steps.Add(pathO);
+
+            //Реализация перехода по каталогам
+            do
+            {
+                Consol.Show(pathO);
+                WriteLine("Введите каталог в какой вы хотите перейти");
+                newPathDirectory = ReadLine();
+                pathO = pathO + newPathDirectory + slash;
+                steps.Add(pathO);
+                Clear();
+            } 
+            while (newPathDirectory != "1");
+            ///////////////////////////////////////////////////
 
             //steps.IndexOf(pathO, 0);
             //newpath =pathO+"hta.txt";
             //WriteLine("Введите название файла");
             //newpath = ReadLine();
-            path = @"E:\1\123.doc";
+            // path = @"E:\1\123.doc";
             //subpath  = @"program\avalon";
             //WriteLine("Выберете диск");
             //pathO = ReadLine();
@@ -51,7 +47,7 @@ namespace Console
             //Consol.CopyFile(path, newpath);
             //Consol.Del(path);
             //Consol.CreateDirectory(path, subpath);
-            Consol.CreateFile(path);
+            ///Consol.CreateFile(path);
         }
     }
 }

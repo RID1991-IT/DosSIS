@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ДЗ по програмированию\\Console\\TeamY\\Console.csproj": {}
+    "E:\\GitHub2\\TeamY\\Console.csproj": {}
   },
   "projects": {
-    "D:\\ДЗ по програмированию\\Console\\TeamY\\Console.csproj": {
+    "E:\\GitHub2\\TeamY\\Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ДЗ по програмированию\\Console\\TeamY\\Console.csproj",
+        "projectUniqueName": "E:\\GitHub2\\TeamY\\Console.csproj",
         "projectName": "Console",
-        "projectPath": "D:\\ДЗ по програмированию\\Console\\TeamY\\Console.csproj",
-        "packagesPath": "C:\\Users\\joker\\.nuget\\packages\\",
-        "outputPath": "D:\\ДЗ по програмированию\\Console\\TeamY\\obj\\",
+        "projectPath": "E:\\GitHub2\\TeamY\\Console.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "E:\\GitHub2\\TeamY\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\joker\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
