@@ -26,25 +26,47 @@ namespace DosSIS
                 File.Delete(path);
             }
         }
+        public static void ShowDisk()//Показ жестких дисков
+        {
+            DriveInfo[] drivers = DriveInfo.GetDrives();
+            foreach (var driver in drivers)
+            {
+                if (driver.IsReady)
+                {
+                    ForegroundColor = ConsoleColor.DarkGreen;
+                    WriteLine($"{driver.Name}-{GetGB(driver.TotalSize)} GB TotalSize - {GetGB(driver.AvailableFreeSpace)} GB FreeSpace");
+                    ForegroundColor = ConsoleColor.White;
+                    
 
+                }
+            }
+        }
+        static double GetGB(long bytes)//Пересчет в Gb
+        {
+            var result = (double)bytes / (1024 * 1024 * 1024);
+            return Math.Round(result, 2);
+        }
         public static string Show(string dirName)//показ каталогов и файлов
         {
             if (Directory.Exists(dirName))
             {
                 string[] dirs = Directory.GetDirectories(dirName);
-                ForegroundColor = ConsoleColor.Green;
                 WriteLine("Подкаталоги:");
                 foreach (string dir in dirs)
                 {
+                    ForegroundColor = ConsoleColor.Green;
                     WriteLine(dir);
+                    ForegroundColor = ConsoleColor.White;
                 }
                 WriteLine();
                 string[] files = Directory.GetFiles(dirName);
-                ForegroundColor = ConsoleColor.Red;
+                
                 WriteLine("Файлы:");
                 foreach (string dir in files)
-                {
+                {   
+                    ForegroundColor = ConsoleColor.Cyan;
                     WriteLine(dir);
+                    ForegroundColor = ConsoleColor.White;
                 }
                 return dirName;
             }
@@ -69,16 +91,27 @@ namespace DosSIS
             WriteLine("_______________________________");
             WriteLine("CreateDirec - Создать папку    ");
         }
+
+        public static void HelpLocal()
+        {
+            WriteLine("_______________________________");
+            WriteLine("      Доступные команды        ");
+            WriteLine("___________________________________________________");
+            WriteLine("Чтоб перейти в другой каталог введите его название ");
+            WriteLine("_______________________________                    ");
+            WriteLine("OpenFile - чтоб открыть файл ехе.               ");
+            ReadKey();
+            //WriteLine("_______________________________");
+            //WriteLine("Del - Удалить файл             ");
+            //WriteLine("_______________________________");
+            //WriteLine("MoveFile - Переместить файл    ");
+            //WriteLine("_______________________________");
+            //WriteLine("CreateDirec - Создать папку    ");
+        }
         public static void MoveFile(string path, string newPath) // Перемещение файла
         {
             CopyFile(path, newPath);
             DelFile(path);
-
-            /*FileInfo fileInf = new FileInfo(path);
-            if (fileInf.Exists)
-            {
-                File.Move(path, newPath);
-            }*/
         }
 
         /*public static void CreateFile(string path) // создание файла
@@ -108,48 +141,37 @@ namespace DosSIS
             else WriteLine("Папка существует");
         }
 
-        //public static string MoveDirectory(string directory)
+      
+
+        //public static void OpenFile(string path) // открытие текстового файла
         //{
-        //    DriveInfo[] drivers = DriveInfo.GetDrives();
-        //    foreach (var driver in drivers)
+        //    using (FileStream fs = File.Open(path, FileMode.Open, FileAccess.Read))
         //    {
-        //        if (driver.IsReady)
+        //        byte[] b = new byte[1024];
+        //        UTF8Encoding temp = new UTF8Encoding(true);
+
+        //        while (fs.Read(b, 0, b.Length) > 0)
         //        {
-        //            ForegroundColor = ConsoleColor.DarkGreen;
-        //            WriteLine($"{driver.Name} ");
+        //            Console.WriteLine(temp.GetString(b));
         //        }
 
         //    }
-        //    WriteLine("Выберите диск");
-        //    pathMove = ReadLine() + ":\\";
-        //    do
-        //    {
-        //        Clear();
-        //        Consol.Show(pathMove);
-        //        WriteLine("Введите каталог в какой вы хотите перейти");
-        //        newPathDirectory = ReadLine();
-        //        pathMove = pathMove + newPathDirectory + @"\";
-        //    }
-        //    while (newPathDirectory != "11");
         //}
-
-        public static void OpenFile(string path) // открытие текстового файла
+        //public static void OpenExeFile(string path)// открытие exe файла
+        //{
+        //    Process.Start(path);
+        //}
+        public static void OpenFile(string pathMove)//открытие любого документа в фоновом режиме
         {
-            using (FileStream fs = File.Open(path, FileMode.Open, FileAccess.Read))
-            {
-                byte[] b = new byte[1024];
-                UTF8Encoding temp = new UTF8Encoding(true);
-
-                while (fs.Read(b, 0, b.Length) > 0)
-                {
-                    Console.WriteLine(temp.GetString(b));
-                }
-
-            }
+            string FileName;
+            WriteLine("ВВедите название файла и его расширение");
+            FileName = ReadLine();
+            string commandText = pathMove + FileName;
+            var proc = new System.Diagnostics.Process();
+            proc.StartInfo.FileName = commandText;
+            proc.StartInfo.UseShellExecute = true;
+            proc.Start();
         }
-        public static void OpenExeFile(string path)// открытие exe файла
-        {
-            Process.Start(path);
-        }
+      
     }
  }
