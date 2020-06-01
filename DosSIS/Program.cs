@@ -10,12 +10,12 @@ namespace DosSIS
     {
         static void Main(string[] args)
         {
-            string pathO, subpath, pathMove, newPathDirectory, command, str;
-
+            string pathO, subpath, pathMove, newPathDirectory, command, str, path;
+            path = @"D:\DZ.doc";
             //subpath = @"program\avalo4n";
             //pathO = @"E:\1";
             //pathMove = "";
-           // Consol.CreateDirectory(pathO, subpath);
+            // Consol.CreateDirectory(pathO, subpath);
             //Реализация перехода по каталогам
             do
             {
@@ -54,18 +54,13 @@ namespace DosSIS
                         while (newPathDirectory != "11");
                         break;
                     case "Help":
-                        WriteLine("_______________________________");
-                        WriteLine("      Доступные команды        ");
-                        WriteLine("_______________________________");
-                        WriteLine(" Move - Выбрать нужный каталог");
-                        WriteLine("_______________________________");
-                        WriteLine("    Copy - Копировать файл ");
-                        WriteLine("_______________________________");
-                        WriteLine("      Del - Удалить файл ");
-                        WriteLine("_______________________________");
-                        WriteLine("  MoveFile - Переместить файл ");
-                        WriteLine("_______________________________");
-                        WriteLine("  CreateDirec - Создать папку ");
+                        Consol.Help();
+                        break;
+                    case "openfile":
+                        Consol.OpenFile(path);
+                        break;
+                    case "openfile.exe":
+                        Consol.OpenExeFile(path);
                         break;
                 }
             } while (str != "End");

@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using static System.Console;
@@ -16,7 +17,6 @@ namespace DosSIS
             {
                 File.Copy(path, newPath, true);
             }
-
         }
         public static void DelFile(string path) // Удаление файла
         {
@@ -56,7 +56,18 @@ namespace DosSIS
         }
         public static void Help()
         {
-
+            WriteLine("_______________________________");
+            WriteLine("      Доступные команды        ");
+            WriteLine("_______________________________");
+            WriteLine("Move - Выбрать нужный каталог  ");
+            WriteLine("_______________________________");
+            WriteLine("Copy - Копировать файл         ");
+            WriteLine("_______________________________");
+            WriteLine("Del - Удалить файл             ");
+            WriteLine("_______________________________");
+            WriteLine("MoveFile - Переместить файл    ");
+            WriteLine("_______________________________");
+            WriteLine("CreateDirec - Создать папку    ");
         }
         public static void MoveFile(string path, string newPath) // Перемещение файла
         {
@@ -121,5 +132,24 @@ namespace DosSIS
         //    }
         //    while (newPathDirectory != "11");
         //}
-      }
+
+        public static void OpenFile(string path) // открытие текстового файла
+        {
+            using (FileStream fs = File.Open(path, FileMode.Open, FileAccess.Read))
+            {
+                byte[] b = new byte[1024];
+                UTF8Encoding temp = new UTF8Encoding(true);
+
+                while (fs.Read(b, 0, b.Length) > 0)
+                {
+                    Console.WriteLine(temp.GetString(b));
+                }
+
+            }
+        }
+        public static void OpenExeFile(string path)// открытие exe файла
+        {
+            Process.Start(path);
+        }
+    }
  }
