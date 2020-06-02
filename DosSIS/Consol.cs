@@ -151,5 +151,16 @@ namespace DosSIS
         {
             Process.Start(path);
         }
+
+
+
+        public static void Logo()
+        {
+            ForegroundColor = ConsoleColor.Cyan; Write("    #####      ###     #####"); ForegroundColor = ConsoleColor.Red; WriteLine ("     #####  ##  ##### ");
+            ForegroundColor = ConsoleColor.Cyan; Write("   ##    #   #    #   #     "); ForegroundColor = ConsoleColor.Red; WriteLine ("    #      ##  #      ");
+            ForegroundColor = ConsoleColor.Cyan; Write("  ##     #  #     #  ####   "); ForegroundColor = ConsoleColor.Red; WriteLine ("   ####   ##  ####    ");
+            ForegroundColor = ConsoleColor.Cyan; Write(" ##    #    #    #      #   "); ForegroundColor = ConsoleColor.Red; WriteLine ("     #  ##      #    ");
+            ForegroundColor = ConsoleColor.Cyan; Write("######       ###   #####    "); ForegroundColor = ConsoleColor.Red; WriteLine ("#####  ##  #####     ");
+        }
     }
  }
