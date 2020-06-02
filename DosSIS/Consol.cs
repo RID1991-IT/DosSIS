@@ -10,6 +10,7 @@ namespace DosSIS
 {
     class Consol
     {
+
         public static void CopyFile(string path, string newPath)//копирование файла
         {
             FileInfo fileInf = new FileInfo(path);
@@ -20,10 +21,19 @@ namespace DosSIS
         }
         public static void DelFile(string path) // Удаление файла
         {
-            FileInfo fileInf = new FileInfo(path);
+            string nameFile, proverka;
+            WriteLine($"Введит название файла");
+            nameFile = ReadLine();
+            nameFile = path + nameFile;
+            FileInfo fileInf = new FileInfo(nameFile);
             if (fileInf.Exists)
             {
-                File.Delete(path);
+                WriteLine($"Вы уверены что хотите удалить '{nameFile}' ?! Нажмите 'Y' чтоб согласиться");
+                proverka = ReadLine();
+                if (proverka == "Y" || proverka == "y")
+                {
+                    File.Delete(nameFile);
+                }
             }
         }
         public static void ShowDisk()//Показ жестких дисков
@@ -34,10 +44,8 @@ namespace DosSIS
                 if (driver.IsReady)
                 {
                     ForegroundColor = ConsoleColor.DarkGreen;
-                    WriteLine($"{driver.Name}-{GetGB(driver.TotalSize)} GB TotalSize - {GetGB(driver.AvailableFreeSpace)} GB FreeSpace");
+                    WriteLine($"{driver.Name}{GetGB(driver.TotalSize)}GB TotalSize({GetGB(driver.AvailableFreeSpace)}GB FreeSpace)");
                     ForegroundColor = ConsoleColor.White;
-                    
-
                 }
             }
         }
@@ -46,11 +54,12 @@ namespace DosSIS
             var result = (double)bytes / (1024 * 1024 * 1024);
             return Math.Round(result, 2);
         }
-        public static string Show(string dirName)//показ каталогов и файлов
+        public static void Show(string dirName)//показ каталогов и файлов
         {
             if (Directory.Exists(dirName))
             {
                 string[] dirs = Directory.GetDirectories(dirName);
+                ForegroundColor = ConsoleColor.White;
                 WriteLine("Подкаталоги:");
                 foreach (string dir in dirs)
                 {
@@ -58,23 +67,16 @@ namespace DosSIS
                     WriteLine(dir);
                     ForegroundColor = ConsoleColor.White;
                 }
-                WriteLine();
                 string[] files = Directory.GetFiles(dirName);
-                
                 WriteLine("Файлы:");
                 foreach (string dir in files)
-                {   
+                {
                     ForegroundColor = ConsoleColor.Cyan;
                     WriteLine(dir);
                     ForegroundColor = ConsoleColor.White;
                 }
-                return dirName;
-            }
-            else
-            {
-                return "Wrong way";
-            }
 
+            }
         }
         public static void Help()
         {
@@ -94,19 +96,13 @@ namespace DosSIS
 
         public static void HelpLocal()
         {
-            WriteLine("_______________________________");
-            WriteLine("      Доступные команды        ");
-            WriteLine("___________________________________________________");
-            WriteLine("Чтоб перейти в другой каталог введите его название ");
-            WriteLine("_______________________________                    ");
-            WriteLine("OpenFile - чтоб открыть файл ехе.               ");
+            WriteLine("      Доступные команды          ");
+            WriteLine("**********************************");
+            WriteLine("--> Open - чтоб открыть файл       ");
+            WriteLine("--> Del- чтоб удалить  файл       ");
+            WriteLine("--> CreateDir- чтоб создать каталог");
             ReadKey();
-            //WriteLine("_______________________________");
-            //WriteLine("Del - Удалить файл             ");
-            //WriteLine("_______________________________");
-            //WriteLine("MoveFile - Переместить файл    ");
-            //WriteLine("_______________________________");
-            //WriteLine("CreateDirec - Создать папку    ");
+
         }
         public static void MoveFile(string path, string newPath) // Перемещение файла
         {
@@ -137,11 +133,13 @@ namespace DosSIS
             if (!newDir.Exists)
             {
                 dirInfo.CreateSubdirectory(subpath);
+                WriteLine(path + @"\" + subpath);
+                ReadKey();
             }
             else WriteLine("Папка существует");
         }
 
-      
+
 
         //public static void OpenFile(string path) // открытие текстового файла
         //{
@@ -172,6 +170,5 @@ namespace DosSIS
             proc.StartInfo.UseShellExecute = true;
             proc.Start();
         }
-      
     }
- }
+}
