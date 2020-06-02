@@ -14,6 +14,7 @@ namespace DosSIS
         public static void CopyFile(string path, string newPath)//копирование файла
         {
             FileInfo fileInf = new FileInfo(path);
+            
             if (fileInf.Exists)
             {
                 File.Copy(path, newPath, true);
@@ -26,15 +27,24 @@ namespace DosSIS
             nameFile = ReadLine();
             nameFile = path + nameFile;
             FileInfo fileInf = new FileInfo(nameFile);
-            if (fileInf.Exists)
+            try
             {
-                WriteLine($"Вы уверены что хотите удалить '{nameFile}' ?! Нажмите 'Y' чтоб согласиться");
-                proverka = ReadLine();
-                if (proverka == "Y" || proverka == "y")
+                if (fileInf.Exists)
                 {
-                    File.Delete(nameFile);
+                    WriteLine($"Вы уверены что хотите удалить '{nameFile}' ?! Нажмите 'Y' чтоб согласиться");
+                    proverka = ReadLine();
+                    if (proverka == "Y" || proverka == "y")
+                    {
+                        File.Delete(nameFile);
+                    }
                 }
             }
+            catch (UnauthorizedAccessException)
+            {
+                WriteLine("Недостаточно прав для удаления файла, либо файл занят другим процессом");
+                throw;
+            }
+            
         }
         public static void ShowDisk()//Показ жестких дисков
         {
@@ -58,24 +68,25 @@ namespace DosSIS
         {
             if (Directory.Exists(dirName))
             {
-                string[] dirs = Directory.GetDirectories(dirName);
+                DirectoryInfo dirs = new DirectoryInfo(dirName);
+                DirectoryInfo[] dirsArr = dirs.GetDirectories();
                 ForegroundColor = ConsoleColor.White;
                 WriteLine("Подкаталоги:");
-                foreach (string dir in dirs)
+                ForegroundColor = ConsoleColor.Green;
+                foreach (var dir in dirsArr)
                 {
-                    ForegroundColor = ConsoleColor.Green;
-                    WriteLine(dir);
-                    ForegroundColor = ConsoleColor.White;
+                    WriteLine(dir.Name);
                 }
-                string[] files = Directory.GetFiles(dirName);
-                WriteLine("Файлы:");
-                foreach (string dir in files)
-                {
-                    ForegroundColor = ConsoleColor.Cyan;
-                    WriteLine(dir);
-                    ForegroundColor = ConsoleColor.White;
-                }
+                ForegroundColor = ConsoleColor.White;
 
+                FileInfo[] filesAll = dirs.GetFiles();
+                WriteLine("Файлы:");
+                ForegroundColor = ConsoleColor.Cyan;
+                foreach (var dir in filesAll)
+                {                    
+                    WriteLine(dir.Name);
+                }
+                ForegroundColor = ConsoleColor.White;
             }
         }
         public static void Help()

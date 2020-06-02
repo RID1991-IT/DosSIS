@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using static System.Console;
+using System.Text.RegularExpressions;
 
 namespace DosSIS
 {
@@ -33,39 +34,36 @@ namespace DosSIS
                 Clear();
                 Logo();
                 Consol.Show(temp[count]);
-                WriteLine("Чтоб перейти в другой каталог введите его название.Чтоб узнать доступные комманды нажмите Help");
+                WriteLine("Чтобы перейти в другой каталог введите его название. Чтобы узнать доступные комманды нажмите Help");
                 command = ReadLine();
-                if (command == "Open")
+                if (Regex.IsMatch(command, "Open", RegexOptions.IgnoreCase))
                 {
                     Consol.OpenFile(temp[count]);
                 }
-                else if (command == "Del")
+                else if (Regex.IsMatch(command, "del", RegexOptions.IgnoreCase))
                 {
                     Consol.DelFile(temp[count]);
                 }
-                else if (command == "Help")
+                else if (Regex.IsMatch(command, "help", RegexOptions.IgnoreCase))
                 {
                     Consol.HelpLocal();
                 }
-                else if(command == "Back")
+                else if(Regex.IsMatch(command, "back", RegexOptions.IgnoreCase))
                 {
                     temp.Remove(temp[count]);
                     count--;
-                    
                 }
-                else if (command == "End" || command == "end")
+                else if (Regex.IsMatch(command, "end", RegexOptions.IgnoreCase))
                 {
                     count = 0;
                     break;
                 }
-                else if (command == "CreateDir")
+                else if (Regex.IsMatch(command, "createdir", RegexOptions.IgnoreCase))
                 {
                     string pr;
-                    WriteLine("ВВедите название папки");
+                    WriteLine("Введите название папки");
                     pr = ReadLine();
                     Consol.CreateDirectory(temp[count], pr);
-                    
-
                 }
                 else
                 {
@@ -78,11 +76,11 @@ namespace DosSIS
                     }
                     else
                     {
-                        WriteLine("Не верный путь проверьте ввод");
+                        WriteLine("Неверный путь проверьте ввод");
                         ReadKey();
                     }
                 }
-            } while (command != "End" || command != "end");
+            } while (!Regex.IsMatch(command, "Open", RegexOptions.IgnoreCase));
         }
         public static void Logo()
         {
