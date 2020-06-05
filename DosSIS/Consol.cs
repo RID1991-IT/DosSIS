@@ -149,8 +149,6 @@ namespace DosSIS
             else WriteLine("Папка существует");
         }
 
-
-
         //public static void OpenFile(string path) // открытие текстового файла
         //{
         //    using (FileStream fs = File.Open(path, FileMode.Open, FileAccess.Read))
